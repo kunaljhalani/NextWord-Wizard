@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Next Word Prediction</title>
+    <style>
+        body{
+            background-color: rgb(231, 129, 222);
+        }
+
+        #heading{
+            border: 2px solid black;
+            padding: 10px;
+            background-color: rgb(121, 244, 248);
+            font-size: 55px;
+            width: fit-content;
+            align-self: auto;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        .c1{
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 5px;
+        }
+
+        #form_1{
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px;
+            background-color: rgb(228, 228, 131);
+            width: fit-content;
+        }
+
+        #btn{
+            border: 2px solid black;
+            width: 180px;
+        }
+
+        #pr{
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: rgb(228, 228, 131);
+            height: 20px;
+            width: 385px;
+            margin-left: 20px;
+        }
+
+        #hh2{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="heading"> NextWord Wizard</div>
+    <form action="/predict" method="POST" id="form_1">
+        <div class="c1">
+            <label for="input_text">Enter a starting word:</label>
+            <input type="text" id="input_text" name="input_text" required>
+        </div>
+
+        <div class="c1">
+            <label for="input_number">Enter no of words:</label>
+            <input type="number" id="input_number" name="input_number" required>
+        </div>
+
+        <div class="c1" id="bb">
+            <button type="submit" id="btn">Predict Next Word</button>
+        </div>
+    </form>
+    <div>
+        <h2 id="hh2">Predicted Text:</h2>
+        <p id="pr">{{ prediction }}</p>
+    </div>
+</body>
+</html>
